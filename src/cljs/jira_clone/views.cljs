@@ -31,8 +31,8 @@
         logged-user    (subscribe [:logged-user])
         in-progress?   (subscribe [:in-progress?])] 
     (fn []
-      [:div
-       [:h4.pull-right (str "Logged as :" (:username @logged-user))]
+      [:div.container
+       [:h4.pull-right (str "Logged as :" @logged-user)]
        [:div.container
         [issues-table "My open issues" @my-open-issues]
         [issues-table "Open issues" @open-issues]

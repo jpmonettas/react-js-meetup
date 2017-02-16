@@ -1351,29 +1351,29 @@ html:-moz-full-screen-ancestor {
 <style type="text/css">
 /**
  * A simple theme for reveal.js presentations, similar
- * to the default theme. The accent color is brown.
+ * to the default theme. The accent color is darkblue.
  *
- * This theme is Copyright (C) 2012-2013 Owen Versteeg, http://owenversteeg.com - it is MIT licensed.
+ * This theme is Copyright (C) 2012 Owen Versteeg, https://github.com/StereotypicalApps. It is MIT licensed.
+ * reveal.js is Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
-.reveal a {
-  line-height: 1.3em; }
-
+@import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
 body {
-  background: #F0F1EB;
-  background-color: #F0F1EB; }
+  background: #fff;
+  background-color: #fff; }
 
 .reveal {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, FreeSerif, serif;
+  font-family: "Lato", sans-serif;
   font-size: 36px;
   font-weight: normal;
   color: #000; }
 
 ::selection {
   color: #fff;
-  background: #26351C;
+  background: rgba(0, 0, 0, 0.99);
   text-shadow: none; }
 
 .reveal .slides > section,
@@ -1391,8 +1391,8 @@ body {
 .reveal h5,
 .reveal h6 {
   margin: 0 0 20px 0;
-  color: #383D3D;
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, FreeSerif, serif;
+  color: #000;
+  font-family: "News Cycle", Impact, sans-serif;
   font-weight: normal;
   line-height: 1.2;
   letter-spacing: normal;
@@ -1555,20 +1555,20 @@ body {
  * LINKS
  *********************************************/
 .reveal a {
-  color: #51483D;
+  color: #00008B;
   text-decoration: none;
   -webkit-transition: color 0.15s ease;
   -moz-transition: color 0.15s ease;
   transition: color 0.15s ease; }
 
 .reveal a:hover {
-  color: #8b7c69;
+  color: #0000f1;
   text-shadow: none;
   border: none; }
 
 .reveal .roll span:after {
   color: #fff;
-  background: #25211c; }
+  background: #00003f; }
 
 /*********************************************
  * IMAGES
@@ -1590,7 +1590,7 @@ body {
 
 .reveal a:hover img {
   background: rgba(255, 255, 255, 0.2);
-  border-color: #51483D;
+  border-color: #00008B;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
 
 /*********************************************
@@ -1598,31 +1598,31 @@ body {
  *********************************************/
 .reveal .controls .navigate-left,
 .reveal .controls .navigate-left.enabled {
-  border-right-color: #51483D; }
+  border-right-color: #00008B; }
 
 .reveal .controls .navigate-right,
 .reveal .controls .navigate-right.enabled {
-  border-left-color: #51483D; }
+  border-left-color: #00008B; }
 
 .reveal .controls .navigate-up,
 .reveal .controls .navigate-up.enabled {
-  border-bottom-color: #51483D; }
+  border-bottom-color: #00008B; }
 
 .reveal .controls .navigate-down,
 .reveal .controls .navigate-down.enabled {
-  border-top-color: #51483D; }
+  border-top-color: #00008B; }
 
 .reveal .controls .navigate-left.enabled:hover {
-  border-right-color: #8b7c69; }
+  border-right-color: #0000f1; }
 
 .reveal .controls .navigate-right.enabled:hover {
-  border-left-color: #8b7c69; }
+  border-left-color: #0000f1; }
 
 .reveal .controls .navigate-up.enabled:hover {
-  border-bottom-color: #8b7c69; }
+  border-bottom-color: #0000f1; }
 
 .reveal .controls .navigate-down.enabled:hover {
-  border-top-color: #8b7c69; }
+  border-top-color: #0000f1; }
 
 /*********************************************
  * PROGRESS BAR
@@ -1631,7 +1631,7 @@ body {
   background: rgba(0, 0, 0, 0.2); }
 
 .reveal .progress span {
-  background: #51483D;
+  background: #00008B;
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
@@ -1642,13 +1642,13 @@ body {
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Functional SPA with Clojurescript</h1><p class="date">Created: 2017-02-15 Wed 23:04</p>
+<section id="sec-title-slide"><h1 class="title">Functional SPA with Clojurescript</h1><p class="date">Created: 2017-02-16 Thu 17:20</p>
 </section>
 <section>
-<section id="slide-org39c37bc">
-<h2 id="org39c37bc">Me</h2>
+<section id="slide-org40ef8e2">
+<h2 id="org40ef8e2">Me</h2>
 <ul>
-<li>Programmer at Infuy (<a href="http://www.infuy.com/">http://www.infuy.com/</a>)</li>
+<li>Developer at Infuy (<a href="http://www.infuy.com/">http://www.infuy.com/</a>)</li>
 <li>Clojure +5 years</li>
 <li>Re-frame almost 2 years</li>
 <li>Lisps +12 years (CommonLisp, Scheme, Elisp)</li>
@@ -1657,99 +1657,43 @@ body {
 
 
 <div class="figure">
-<p><img src="data:image/jpeg;base64,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" />
+<p><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="200px" height="102px" viewBox="0 0 200 102" enable-background="new 0 0 200 102" xml:space="preserve">
+<g>
+	<path fill="#0C5B82" d="M7.341,19.533c-1.169,0-2.686-1.019-4.547-3.059C0.93,14.436,0,12.786,0,11.524
+		c0-1.335,0.913-3.004,2.74-5.006C4.563,4.517,6.1,3.515,7.341,3.515c1.169,0,2.686,1.021,4.548,3.06
+		c1.862,2.041,2.795,3.69,2.795,4.95c0,1.335-0.916,3.004-2.739,5.006C10.118,18.532,8.583,19.533,7.341,19.533z M0,77.375V27.098
+		h14.684v50.277H0z"/>
+	<path fill="#0C5B82" d="M51.059,77.375V45.562c0-1.927-0.501-3.521-1.503-4.782c-1.002-1.261-2.468-1.892-4.394-1.892
+		c-1.929,0-3.448,0.631-4.562,1.892c-1.112,1.262-1.668,2.966-1.668,5.116v31.479H24.36V26.986h12.793l0.443,4.672
+		c1.113-1.779,2.689-3.188,4.729-4.227c2.04-1.038,4.541-1.558,7.508-1.558c4.82,0,8.658,1.501,11.514,4.505
+		c2.853,3.004,4.282,7.102,4.282,12.292v34.704H51.059z"/>
+	<path fill="#0C5B82" d="M106.341,13.972c-0.446-0.296-1.169-0.611-2.169-0.945s-2.207-0.501-3.614-0.501
+		c-2.745,0-4.896,0.965-6.453,2.893c-1.558,1.93-2.336,4.487-2.336,7.675v3.894h10.456l-0.89,12.124h-9.566v38.265h-14.35V39.11
+		h-6.451V26.986h6.451v-2.225c0-8.156,1.963-14.312,5.896-18.466c3.929-4.151,9.305-6.229,16.128-6.229
+		c3.188,0,5.746,0.52,7.677,1.557L106.341,13.972z"/>
+	<path fill="#0C5B82" d="M137.152,77.375l-0.334-4.673c-1.112,1.708-2.727,3.098-4.839,4.172c-2.113,1.076-4.616,1.615-7.508,1.615
+		c-4.747,0-8.564-1.521-11.458-4.56c-2.892-3.04-4.338-7.12-4.338-12.238V26.986h14.572v31.814c0,1.93,0.501,3.521,1.501,4.781
+		c1.001,1.262,2.466,1.892,4.395,1.892c1.928,0,3.449-0.63,4.561-1.892c1.112-1.261,1.67-2.965,1.67-5.115v-31.48h14.57v50.389
+		H137.152z"/>
+	<path fill="#0C5B82" d="M185.427,73.036c-2.668,8.448-5.781,14.947-9.34,19.504c-3.558,4.557-7.93,7.686-13.118,9.393l-5.906-9.89
+		c3.336-1.336,6.025-3.187,8.064-5.559c2.04-2.369,3.986-6.223,5.84-11.557l-15.573-47.941l14.148-0.007l5.833,19.042
+		c0.227,0.74,0.627,2.204,1.199,4.389c0.571,2.186,1.011,3.906,1.316,5.164c0.38-1.626,0.758-3.125,1.142-4.491
+		c0.38-1.366,0.876-3.012,1.485-4.935l5.945-19.151L200,26.986L185.427,73.036z"/>
+</g>
+</svg>
 </p>
 </div>
 </section>
 </section>
 <section>
-<section id="slide-org2d41205">
-<h2 id="org2d41205">Questions?</h2>
+<section id="slide-orgfedaadf">
+<h2 id="orgfedaadf">Questions?</h2>
 </section>
 </section>
 <section>
-<section id="slide-org2ea6271">
-<h2 id="org2ea6271">Why functional programming?</h2>
+<section id="slide-orge13efdc">
+<h2 id="orge13efdc">Why functional programming?</h2>
 <ul>
 <li>Problems reasonning about state
 <ul>
@@ -1769,8 +1713,8 @@ M6m6p0gm9D+nT6I13OePh7AJvIBN6H+QCbyATeh/Yf/Z" />
 </section>
 </section>
 <section>
-<section id="slide-orgad9cbb2">
-<h2 id="orgad9cbb2">FP and the DOM?</h2>
+<section id="slide-org88e0173">
+<h2 id="org88e0173">FP and the DOM?</h2>
 <p>
 ReactJS! V=f(S)
 </p>
@@ -1778,14 +1722,14 @@ ReactJS! V=f(S)
 </section>
 </section>
 <section>
-<section id="slide-org5b500c4">
-<h2 id="org5b500c4">SPAs are more than views</h2>
-<div class="outline-text-2" id="text-org5b500c4">
+<section id="slide-org991c1c6">
+<h2 id="org991c1c6">SPAs are more than views</h2>
+<div class="outline-text-2" id="text-org991c1c6">
 </div></section>
 </section>
 <section>
-<section id="slide-orga65897d">
-<h3 id="orga65897d">Diagram (a more complete architecture)</h3>
+<section id="slide-orgb37e954">
+<h3 id="orgb37e954">Diagram (a more complete architecture)</h3>
 
 <div class="figure">
 <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAzsAAAEsCAYAAADkY60lAAAABmJLR0QA/wD/AP+gvaeTAAAACXBI
@@ -2199,8 +2143,8 @@ TkSuQmCC" />
 </section>
 </section>
 <section>
-<section id="slide-orgf48f3e9">
-<h3 id="orgf48f3e9">Properties</h3>
+<section id="slide-org7d332c9">
+<h3 id="org7d332c9">Properties</h3>
 <ul>
 <li>Centralized state (code hotswap, time travel, one source of truth, serializable)</li>
 <li>UI as a function of state (easier to reason about, easy to recreate)</li>
@@ -2212,8 +2156,8 @@ TkSuQmCC" />
 </section>
 </section>
 <section>
-<section id="slide-org30e1665">
-<h2 id="org30e1665">Some architecture implementations</h2>
+<section id="slide-orgd3587f5">
+<h2 id="orgd3587f5">Some architecture implementations</h2>
 <ul>
 <li>Javascript/ReactJS/Redux</li>
 <li>Clojurescript/Reagent/Re-frame</li>
@@ -2224,8 +2168,8 @@ TkSuQmCC" />
 </section>
 </section>
 <section>
-<section id="slide-org06078c5">
-<h2 id="org06078c5">Why Clojurescript/Reagent/Re-frame?</h2>
+<section id="slide-orgf827f06">
+<h2 id="orgf827f06">Why Clojurescript/Reagent/Re-frame?</h2>
 <ul>
 <li>Clojure is a functional language (persistent immutable ds)</li>
 <li>Reagent (simpler than ReactJS/JSX)</li>
@@ -2236,8 +2180,8 @@ TkSuQmCC" />
 </section>
 </section>
 <section>
-<section id="slide-orgad13442">
-<h2 id="orgad13442">re-frame (architecture)</h2>
+<section id="slide-orgc4a20d6">
+<h2 id="orgc4a20d6">re-frame (architecture)</h2>
 
 <div class="figure">
 <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAz0AAAH3CAYAAACRhDGOAAAABmJLR0QA/wD/AP+gvaeTAAAACXBI
@@ -3243,8 +3187,8 @@ AABJRU5ErkJggg==" />
 </section>
 </section>
 <section>
-<section id="slide-org46b441d">
-<h2 id="org46b441d">re-frame 0 (db)</h2>
+<section id="slide-org75fa235">
+<h2 id="org75fa235">re-frame 0 (db)</h2>
 <div class="org-src-container">
 
 <pre  class="src src-clojurescript"><span style="color: #2aa198;">{</span><span style="color: #268bd2; font-weight: bold;">:todos</span> <span style="color: #b58900;">{</span>1 <span style="color: #268bd2;">{</span><span style="color: #268bd2; font-weight: bold;">:description</span> <span style="color: #2aa198;">"First todo"</span> <span style="color: #268bd2; font-weight: bold;">:status</span> <span style="color: #268bd2; font-weight: bold;">:todo</span><span style="color: #268bd2;">}</span>
@@ -3255,8 +3199,8 @@ AABJRU5ErkJggg==" />
 </section>
 </section>
 <section>
-<section id="slide-orge4af181">
-<h2 id="orge4af181">re-frame 1 (events)</h2>
+<section id="slide-org5c65407">
+<h2 id="org5c65407">re-frame 1 (events)</h2>
 <div class="org-src-container">
 
 <pre  class="src src-clojurescript"><span style="color: #2aa198;">[</span><span style="color: #268bd2; font-weight: bold;">:increment-counter</span><span style="color: #2aa198;">]</span>
@@ -3265,14 +3209,16 @@ AABJRU5ErkJggg==" />
             <span style="color: #268bd2; font-weight: bold;">:priority</span> <span style="color: #268bd2; font-weight: bold;">:low</span><span style="color: #b58900;">}</span><span style="color: #2aa198;">]</span>
 
 <span style="color: #2aa198;">[</span><span style="color: #268bd2; font-weight: bold;">:move</span> <span style="color: #b58900;">[</span>2 3<span style="color: #b58900;">]</span> <span style="color: #b58900;">[</span>10 15<span style="color: #b58900;">]</span><span style="color: #2aa198;">]</span>
+
+<span style="color: #2aa198;">(</span>dispatch <span style="color: #b58900;">[</span><span style="color: #268bd2; font-weight: bold;">:some-event</span> <span style="color: #2aa198;">"some data"</span> <span style="color: #2aa198;">"some more data"</span><span style="color: #b58900;">]</span><span style="color: #2aa198;">)</span>
 </pre>
 </div>
 
 </section>
 </section>
 <section>
-<section id="slide-orgd07f9e2">
-<h2 id="orgd07f9e2">re-frame 2 (event handling)</h2>
+<section id="slide-orgec15c78">
+<h2 id="orgec15c78">re-frame 2 (event handling)</h2>
 <div class="org-src-container">
 
 <pre  class="src src-clojurescript"><span style="color: #2aa198;">(</span>reg-event-db
@@ -3285,8 +3231,8 @@ AABJRU5ErkJggg==" />
 </section>
 </section>
 <section>
-<section id="slide-orgc69098e">
-<h2 id="orgc69098e">re-frame 2 (more event handling)</h2>
+<section id="slide-org1650ef4">
+<h2 id="org1650ef4">re-frame 2 (more event handling)</h2>
 <div class="org-src-container">
 
 <pre  class="src src-clojurescript"><span style="color: #2aa198;">(</span>reg-event-fx
@@ -3303,25 +3249,27 @@ AABJRU5ErkJggg==" />
 </section>
 </section>
 <section>
-<section id="slide-org9ff3796">
-<h2 id="org9ff3796">re-frame 3 (effects handling)</h2>
+<section id="slide-org94290c5">
+<h2 id="org94290c5">re-frame 3 (effects handling)</h2>
 <div class="org-src-container">
 
 <pre  class="src src-clojurescript"><span style="color: #2aa198;">(</span>reg-fx
- <span style="color: #268bd2; font-weight: bold;">:call-service</span>
+ <span style="color: #268bd2; font-weight: bold;">:http</span>
  <span style="color: #b58900;">(</span><span style="color: #859900; font-weight: bold;">fn</span> <span style="color: #268bd2;">[</span><span style="color: #6c71c4;">{</span><span style="color: #268bd2; font-weight: bold;">:keys</span> <span style="color: #859900;">[</span>method uri on-success on-failure<span style="color: #859900;">]</span><span style="color: #6c71c4;">}</span><span style="color: #268bd2;">]</span>
-   <span style="color: #93a1a1;">;; </span><span style="color: #93a1a1; font-style: italic;">(ajax/ ....)</span>
-   <span style="color: #268bd2;">(</span><span style="color: #859900; font-weight: bold;">if</span> ok?
-     <span style="color: #6c71c4;">(</span>dispatch on-success<span style="color: #6c71c4;">)</span>
-     <span style="color: #6c71c4;">(</span>dispatch on-error<span style="color: #6c71c4;">)</span><span style="color: #268bd2;">)</span><span style="color: #b58900;">)</span><span style="color: #2aa198;">)</span>
+   <span style="color: #268bd2;">(</span><span style="color: #b58900;">ajax</span><span style="color: #657b83; background-color: #fdf6e3;">/</span>....
+    <span style="color: #268bd2; font-weight: bold;">:success</span> <span style="color: #6c71c4;">(</span><span style="color: #859900; font-weight: bold;">fn</span> <span style="color: #859900;">[</span>data<span style="color: #859900;">]</span>
+               <span style="color: #859900;">(</span>dispatch on-success<span style="color: #859900;">)</span><span style="color: #6c71c4;">)</span>
+
+    <span style="color: #268bd2; font-weight: bold;">:error</span> <span style="color: #6c71c4;">(</span><span style="color: #859900; font-weight: bold;">fn</span> <span style="color: #859900;">[</span>err<span style="color: #859900;">]</span>
+             <span style="color: #859900;">(</span>dispatch on-failure<span style="color: #859900;">)</span><span style="color: #6c71c4;">)</span><span style="color: #268bd2;">)</span><span style="color: #b58900;">)</span><span style="color: #2aa198;">)</span>
 </pre>
 </div>
 
 </section>
 </section>
 <section>
-<section id="slide-org4db2f38">
-<h2 id="org4db2f38">re-frame 4 (query/subscriptions)</h2>
+<section id="slide-org129ef86">
+<h2 id="org129ef86">re-frame 4 (query/subscriptions)</h2>
 <div class="org-src-container">
 
 <pre  class="src src-clojurescript"><span style="color: #2aa198;">(</span>reg-sub
@@ -3336,8 +3284,8 @@ AABJRU5ErkJggg==" />
 </section>
 </section>
 <section>
-<section id="slide-org7283cf3">
-<h2 id="org7283cf3">re-frame 5 (View)</h2>
+<section id="slide-org496ab6a">
+<h2 id="org496ab6a">re-frame 5 (View)</h2>
 <div class="org-src-container">
 
 <pre  class="src src-clojurescript"><span style="color: #2aa198;">(</span><span style="color: #859900; font-weight: bold;">defn</span> <span style="color: #268bd2;">todo-list</span> <span style="color: #b58900;">[</span>title todos<span style="color: #b58900;">]</span>
@@ -3350,17 +3298,25 @@ AABJRU5ErkJggg==" />
 <span style="color: #2aa198;">(</span><span style="color: #859900; font-weight: bold;">defn</span> <span style="color: #268bd2;">main-component</span> <span style="color: #b58900;">[]</span>
   <span style="color: #b58900;">(</span><span style="color: #859900; font-weight: bold;">let</span> <span style="color: #268bd2;">[</span>open-todos <span style="color: #6c71c4;">(</span>subscribe <span style="color: #859900;">[</span><span style="color: #268bd2; font-weight: bold;">:open-todos</span><span style="color: #859900;">]</span><span style="color: #6c71c4;">)</span>
         done-todos <span style="color: #6c71c4;">(</span>subscribe <span style="color: #859900;">[</span><span style="color: #268bd2; font-weight: bold;">:done-todos</span><span style="color: #859900;">]</span><span style="color: #6c71c4;">)</span><span style="color: #268bd2;">]</span>
-   <span style="color: #268bd2;">[</span><span style="color: #268bd2; font-weight: bold;">:div</span>
-    <span style="color: #6c71c4;">[</span><span style="color: #268bd2; font-weight: bold;">:div</span> <span style="color: #2aa198;">"Todo app"</span><span style="color: #6c71c4;">]</span>
-    <span style="color: #6c71c4;">[</span>todo-list <span style="color: #2aa198;">"Open todos"</span> @open-todos<span style="color: #6c71c4;">]</span>
-    <span style="color: #6c71c4;">[</span>todo-list <span style="color: #2aa198;">"Done todos"</span> @done-todos<span style="color: #6c71c4;">]</span><span style="color: #268bd2;">]</span><span style="color: #b58900;">)</span><span style="color: #2aa198;">)</span>
+    <span style="color: #268bd2;">(</span><span style="color: #859900; font-weight: bold;">fn</span> <span style="color: #6c71c4;">[]</span>
+     <span style="color: #6c71c4;">[</span><span style="color: #268bd2; font-weight: bold;">:div</span>
+      <span style="color: #859900;">[</span><span style="color: #268bd2; font-weight: bold;">:div</span> <span style="color: #2aa198;">"Todo app"</span><span style="color: #859900;">]</span>
+      <span style="color: #859900;">[</span>todo-list <span style="color: #2aa198;">"Open todos"</span> @open-todos<span style="color: #859900;">]</span>
+      <span style="color: #859900;">[</span>todo-list <span style="color: #2aa198;">"Done todos"</span> @done-todos<span style="color: #859900;">]</span><span style="color: #6c71c4;">]</span><span style="color: #268bd2;">)</span><span style="color: #b58900;">)</span><span style="color: #2aa198;">)</span>
 </pre>
 </div>
 </section>
 </section>
 <section>
-<section id="slide-org1f3bee4">
-<h2 id="org1f3bee4">Jira clone Demo!</h2>
+<section id="slide-orga24bfff">
+<h2 id="orga24bfff">Jira clone Demo!</h2>
+<ul>
+<li>Changing everything without losing state</li>
+<li>Time travel (state undo)</li>
+<li>Work independently in deffernt layers</li>
+<li>Generate dbs</li>
+
+</ul>
 </section>
 </section>
 </div>

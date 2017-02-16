@@ -1,7 +1,7 @@
 (ns jira-clone.events
   (:require [re-frame.core :as re-frame :refer [debug path after]]
             [jira-clone.db :as db]
-            [day8.re-frame.undo :as undo :refer [undoable]]
+            [day8.re-frame.undo :as undo :refer [undoable]] 
             [ajax.core :as ajax]
             [cljs.spec :as s]))
 
@@ -39,6 +39,7 @@
                  :response-format (ajax/json-response-format {:keywords? true}) 
                  :on-success      [:got-a-joke]
                  :on-failure      [:error]}}))
+
 
 (re-frame/reg-event-db
  :got-a-joke

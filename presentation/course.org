@@ -10,14 +10,14 @@
 #+REVEAL_PREAMBLE:
 #+REVEAL_TRANS: none
 #+REVEAL_HLEVEL: 3
-#+REVEAL_THEME: serif
+#+REVEAL_THEME: simple
 * Me 
-  - Programmer at Infuy (http://www.infuy.com)
+  - Developer at Infuy (http://www.infuy.com)
   - Clojure +5 years
   - Re-frame almost 2 years
   - Lisps +12 years (CommonLisp, Scheme, Elisp)
 
-  [[file:infuy.jpeg]]
+  [[file:infuy.svg]]
 * Questions?
 * Why functional programming?
 
@@ -70,6 +70,7 @@ ReactJS! V=f(S)
 
 [:move [2 3] [10 15]]
 
+(dispatch [:some-event "some data" "some more data"])
 #+END_SRC
 
 * re-frame 2 (event handling)
@@ -145,3 +146,7 @@ ReactJS! V=f(S)
 #+END_SRC
 * Jira clone Demo!
 
+  - Changing everything without losing state
+  - Time travel (state undo)
+  - Work independently in deffernt layers
+  - Generate dbs

@@ -1,7 +1,7 @@
 (ns jira-clone.subs
-    (:require-macros [reagent.ratom :refer [reaction]])
-    (:require [re-frame.core :as re-frame :refer [subscribe]]))
-
+  (:require [re-frame.core :as re-frame :refer [subscribe dispatch]]
+            [jira-clone.db :as db])
+  (:require-macros [reagent.ratom :refer [reaction]]))
 
 (re-frame/reg-sub
  :logged-user
