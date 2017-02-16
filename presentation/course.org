@@ -1,0 +1,147 @@
+#+Title: Functional SPA with Clojurescript
+#+Author:
+#+Email:
+
+#+OPTIONS: toc:nil num:nil
+#+OPTIONS: reveal_slide_number:nil
+#+OPTIONS: reveal_single_file:t
+#+OPTIONS: reveal_width:1200 reveal_height:800
+
+#+REVEAL_PREAMBLE:
+#+REVEAL_TRANS: none
+#+REVEAL_HLEVEL: 3
+#+REVEAL_THEME: serif
+* Me 
+  - Programmer at Infuy (http://www.infuy.com)
+  - Clojure +5 years
+  - Re-frame almost 2 years
+  - Lisps +12 years (CommonLisp, Scheme, Elisp)
+
+  [[file:infuy.jpeg]]
+* Questions?
+* Why functional programming?
+
+- Problems reasonning about state
+   - Out of the tar pit (http://shaffner.us/cs/papers/tarpit.pdf)
+- Easier to test
+- Enables some dev workflow properites
+   - Reload code without losing state
+   - State time travel
+
+* FP and the DOM?
+ReactJS! V=f(S)
+
+* SPAs are more than views
+** Diagram (a more complete architecture)
+  [[file:architecture.png]]
+** Properties
+   - Centralized state (code hotswap, time travel, one source of truth, serializable)
+   - UI as a function of state (easier to reason about, easy to recreate)
+   - Logic as a pure function (easier to test and reason about)
+   - One way dataflow (easier to reason about)
+ 
+* Some architecture implementations
+- Javascript/ReactJS/Redux
+- Clojurescript/Reagent/Re-frame
+- Elm/Elm-architecture
+
+* Why Clojurescript/Reagent/Re-frame?
+  - Clojure is a functional language (persistent immutable ds)
+  - Reagent (simpler than ReactJS/JSX)
+  - Re-frame better story for side-effects and data flow from db -> components
+  - Elm is great but not as great as clojure :P (can also compile to jvm, node, clr)
+* re-frame (architecture)
+  [[file:reframe.png]]
+* re-frame 0 (db)
+#+BEGIN_SRC clojurescript
+
+  {:todos {1 {:description "First todo" :status :todo}
+           2 {:description "Second todo" :status :done}
+           3 {:description "Third todo" :status :todo}}}
+
+#+END_SRC
+* re-frame 1 (events)
+#+BEGIN_SRC clojurescript
+
+[:increment-counter]
+
+[:add-todo {:description "Something to do" 
+            :priority :low}]
+
+[:move [2 3] [10 15]]
+
+#+END_SRC
+
+* re-frame 2 (event handling)
+#+BEGIN_SRC clojurescript
+
+  (reg-event-db
+   :advance-todo
+   (fn  [db [_ todo-id]]
+     (update-in db [:todos todo-id :status] {:todo :in-progress
+                                             :in-progress :done})))
+
+#+END_SRC
+* re-frame 2 (more event handling)
+#+BEGIN_SRC clojurescript
+
+  (reg-event-fx
+   :fetch-a-random-joke
+   (fn [{:keys [db]} _]
+     {:db (assoc db :fetching? true)
+      :call-service {:method          :get
+                     :uri             "https://api.chucknorris.io/jokes/random"
+                     :on-success      [:got-a-joke]
+                     :on-failure      [:error "Couldn't retrieve a joke"]}}))
+
+#+END_SRC
+
+* re-frame 3 (effects handling)
+#+BEGIN_SRC clojurescript
+
+  (reg-fx
+   :http
+   (fn [{:keys [method uri on-success on-failure]}]
+     (ajax/....
+      :success (fn [data]
+                 (dispatch on-success))
+    
+      :error (fn [err]
+               (dispatch on-failure)))))
+
+#+END_SRC
+
+* re-frame 4 (query/subscriptions)
+#+BEGIN_SRC clojurescript
+
+  (reg-sub
+   :open-todos
+   (fn [db _]
+     (filter (fn [todo]
+               (not= (:status todo) :done))
+      (:todos db))))
+
+#+END_SRC
+
+* re-frame 5 (View)
+#+BEGIN_SRC clojurescript
+
+  (defn todo-list [title todos]
+    [:div
+     [:div title]
+     [:ul
+      (for [t todos]
+        [:li (:description t)])]])
+
+  (defn main-component []
+    (let [open-todos (subscribe [:open-todos])
+          done-todos (subscribe [:done-todos])]
+      (fn []
+       [:div
+        [:div "Todo app"]
+        [todo-list "Open todos" @open-todos]
+        [todo-list "Done todos" @done-todos]])))
+
+#+END_SRC
+* Jira clone Demo!
+

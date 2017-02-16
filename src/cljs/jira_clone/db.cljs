@@ -4,7 +4,7 @@
 
 (s/def ::user (s/and string? not-empty))
 (s/def :issue/id (s/and integer? pos?))
-(s/def :issue/description (s/and string? not-empty))
+(s/def :issue/description (s/and string? #(> (count %) 5)))
 (s/def :issue/status #{:todo :in-progress :done})
 (s/def :issue/assigned-to ::user)
 (s/def :db/issue (s/keys :req-un [:issue/description :issue/status]
