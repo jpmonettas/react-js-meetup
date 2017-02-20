@@ -1642,11 +1642,12 @@ body {
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Functional SPA with Clojurescript</h1><p class="date">Created: 2017-02-16 Thu 17:20</p>
+<section id="sec-title-slide"><h1 class="title">Functional SPA with Clojurescript</h1><p class="date">Created: 2017-02-20 Mon 16:20</p>
 </section>
+
 <section>
-<section id="slide-org40ef8e2">
-<h2 id="org40ef8e2">Me</h2>
+<section id="slide-org4df5348">
+<h2 id="org4df5348">Me</h2>
 <ul>
 <li>Developer at Infuy (<a href="http://www.infuy.com/">http://www.infuy.com/</a>)</li>
 <li>Clojure +5 years</li>
@@ -1687,13 +1688,13 @@ body {
 </section>
 </section>
 <section>
-<section id="slide-orgfedaadf">
-<h2 id="orgfedaadf">Questions?</h2>
+<section id="slide-orge9d2815">
+<h2 id="orge9d2815">Questions?</h2>
 </section>
 </section>
 <section>
-<section id="slide-orge13efdc">
-<h2 id="orge13efdc">Why functional programming?</h2>
+<section id="slide-org4cf7e40">
+<h2 id="org4cf7e40">Why functional programming?</h2>
 <ul>
 <li>Problems reasonning about state
 <ul>
@@ -1713,23 +1714,23 @@ body {
 </section>
 </section>
 <section>
-<section id="slide-org88e0173">
-<h2 id="org88e0173">FP and the DOM?</h2>
+<section id="slide-org23de255">
+<h2 id="org23de255">FP and the DOM (ReactJS!)</h2>
 <p>
-ReactJS! V=f(S)
+<b>V=f(S)</b>
 </p>
 
 </section>
 </section>
 <section>
-<section id="slide-org991c1c6">
-<h2 id="org991c1c6">SPAs are more than views</h2>
-<div class="outline-text-2" id="text-org991c1c6">
+<section id="slide-org158343a">
+<h2 id="org158343a">SPAs are more than views</h2>
+<div class="outline-text-2" id="text-org158343a">
 </div></section>
 </section>
 <section>
-<section id="slide-orgb37e954">
-<h3 id="orgb37e954">Diagram (a more complete architecture)</h3>
+<section id="slide-org86340ea">
+<h3 id="org86340ea">A more complete architecture</h3>
 
 <div class="figure">
 <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAzsAAAEsCAYAAADkY60lAAAABmJLR0QA/wD/AP+gvaeTAAAACXBI
@@ -2143,8 +2144,8 @@ TkSuQmCC" />
 </section>
 </section>
 <section>
-<section id="slide-org7d332c9">
-<h3 id="org7d332c9">Properties</h3>
+<section id="slide-org8ec5107">
+<h3 id="org8ec5107">Properties</h3>
 <ul>
 <li>Centralized state (code hotswap, time travel, one source of truth, serializable)</li>
 <li>UI as a function of state (easier to reason about, easy to recreate)</li>
@@ -2156,8 +2157,8 @@ TkSuQmCC" />
 </section>
 </section>
 <section>
-<section id="slide-orgd3587f5">
-<h2 id="orgd3587f5">Some architecture implementations</h2>
+<section id="slide-org9fedece">
+<h2 id="org9fedece">Some architecture implementations</h2>
 <ul>
 <li>Javascript/ReactJS/Redux</li>
 <li>Clojurescript/Reagent/Re-frame</li>
@@ -2168,8 +2169,8 @@ TkSuQmCC" />
 </section>
 </section>
 <section>
-<section id="slide-orgf827f06">
-<h2 id="orgf827f06">Why Clojurescript/Reagent/Re-frame?</h2>
+<section id="slide-orgd159b8c">
+<h2 id="orgd159b8c">Why Clojurescript/Reagent/Re-frame?</h2>
 <ul>
 <li>Clojure is a functional language (persistent immutable ds)</li>
 <li>Reagent (simpler than ReactJS/JSX)</li>
@@ -2180,8 +2181,8 @@ TkSuQmCC" />
 </section>
 </section>
 <section>
-<section id="slide-orgc4a20d6">
-<h2 id="orgc4a20d6">re-frame (architecture)</h2>
+<section id="slide-orgf1fe297">
+<h2 id="orgf1fe297">re-frame (architecture)</h2>
 
 <div class="figure">
 <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAz0AAAH3CAYAAACRhDGOAAAABmJLR0QA/wD/AP+gvaeTAAAACXBI
@@ -3187,136 +3188,129 @@ AABJRU5ErkJggg==" />
 </section>
 </section>
 <section>
-<section id="slide-org75fa235">
-<h2 id="org75fa235">re-frame 0 (db)</h2>
+<section id="slide-org566854b">
+<h2 id="org566854b">re-frame 0 (db)</h2>
 <div class="org-src-container">
 
-<pre  class="src src-clojurescript"><span style="color: #2aa198;">{</span><span style="color: #268bd2; font-weight: bold;">:todos</span> <span style="color: #b58900;">{</span>1 <span style="color: #268bd2;">{</span><span style="color: #268bd2; font-weight: bold;">:description</span> <span style="color: #2aa198;">"First todo"</span> <span style="color: #268bd2; font-weight: bold;">:status</span> <span style="color: #268bd2; font-weight: bold;">:todo</span><span style="color: #268bd2;">}</span>
-         2 <span style="color: #268bd2;">{</span><span style="color: #268bd2; font-weight: bold;">:description</span> <span style="color: #2aa198;">"Second todo"</span> <span style="color: #268bd2; font-weight: bold;">:status</span> <span style="color: #268bd2; font-weight: bold;">:done</span><span style="color: #268bd2;">}</span>
-         3 <span style="color: #268bd2;">{</span><span style="color: #268bd2; font-weight: bold;">:description</span> <span style="color: #2aa198;">"Third todo"</span> <span style="color: #268bd2; font-weight: bold;">:status</span> <span style="color: #268bd2; font-weight: bold;">:todo</span><span style="color: #268bd2;">}</span><span style="color: #b58900;">}</span><span style="color: #2aa198;">}</span>
+<pre  class="src src-clojurescript"><span style="color: #cccccc;">{</span><span style="color: #6699cc;">:todos</span> <span style="color: #66cccc;">{</span>1 <span style="color: #ffcc66;">{</span><span style="color: #6699cc;">:description</span> <span style="color: #66cccc;">"First todo"</span> <span style="color: #6699cc;">:status</span> <span style="color: #6699cc;">:todo</span><span style="color: #ffcc66;">}</span>
+         2 <span style="color: #ffcc66;">{</span><span style="color: #6699cc;">:description</span> <span style="color: #66cccc;">"Second todo"</span> <span style="color: #6699cc;">:status</span> <span style="color: #6699cc;">:done</span><span style="color: #ffcc66;">}</span>
+         3 <span style="color: #ffcc66;">{</span><span style="color: #6699cc;">:description</span> <span style="color: #66cccc;">"Third todo"</span> <span style="color: #6699cc;">:status</span> <span style="color: #6699cc;">:todo</span><span style="color: #ffcc66;">}</span><span style="color: #66cccc;">}</span><span style="color: #cccccc;">}</span>
 </pre>
 </div>
 </section>
 </section>
 <section>
-<section id="slide-org5c65407">
-<h2 id="org5c65407">re-frame 1 (events)</h2>
+<section id="slide-orgdfa33c9">
+<h2 id="orgdfa33c9">re-frame 1 (events)</h2>
 <div class="org-src-container">
 
-<pre  class="src src-clojurescript"><span style="color: #2aa198;">[</span><span style="color: #268bd2; font-weight: bold;">:increment-counter</span><span style="color: #2aa198;">]</span>
+<pre  class="src src-clojurescript"><span style="color: #cccccc;">[</span><span style="color: #6699cc;">:increment-counter</span><span style="color: #cccccc;">]</span>
 
-<span style="color: #2aa198;">[</span><span style="color: #268bd2; font-weight: bold;">:add-todo</span> <span style="color: #b58900;">{</span><span style="color: #268bd2; font-weight: bold;">:description</span> <span style="color: #2aa198;">"Something to do"</span> 
-            <span style="color: #268bd2; font-weight: bold;">:priority</span> <span style="color: #268bd2; font-weight: bold;">:low</span><span style="color: #b58900;">}</span><span style="color: #2aa198;">]</span>
+<span style="color: #cccccc;">[</span><span style="color: #6699cc;">:add-todo</span> <span style="color: #66cccc;">{</span><span style="color: #6699cc;">:description</span> <span style="color: #66cccc;">"Something to do"</span> 
+            <span style="color: #6699cc;">:priority</span> <span style="color: #6699cc;">:low</span><span style="color: #66cccc;">}</span><span style="color: #cccccc;">]</span>
 
-<span style="color: #2aa198;">[</span><span style="color: #268bd2; font-weight: bold;">:move</span> <span style="color: #b58900;">[</span>2 3<span style="color: #b58900;">]</span> <span style="color: #b58900;">[</span>10 15<span style="color: #b58900;">]</span><span style="color: #2aa198;">]</span>
+<span style="color: #cccccc;">[</span><span style="color: #6699cc;">:move</span> <span style="color: #66cccc;">[</span>2 3<span style="color: #66cccc;">]</span> <span style="color: #66cccc;">[</span>10 15<span style="color: #66cccc;">]</span><span style="color: #cccccc;">]</span>
 
-<span style="color: #2aa198;">(</span>dispatch <span style="color: #b58900;">[</span><span style="color: #268bd2; font-weight: bold;">:some-event</span> <span style="color: #2aa198;">"some data"</span> <span style="color: #2aa198;">"some more data"</span><span style="color: #b58900;">]</span><span style="color: #2aa198;">)</span>
-</pre>
-</div>
-
-</section>
-</section>
-<section>
-<section id="slide-orgec15c78">
-<h2 id="orgec15c78">re-frame 2 (event handling)</h2>
-<div class="org-src-container">
-
-<pre  class="src src-clojurescript"><span style="color: #2aa198;">(</span>reg-event-db
- <span style="color: #268bd2; font-weight: bold;">:advance-todo</span>
- <span style="color: #b58900;">(</span><span style="color: #859900; font-weight: bold;">fn</span>  <span style="color: #268bd2;">[</span>db <span style="color: #6c71c4;">[</span>_ todo-id<span style="color: #6c71c4;">]</span><span style="color: #268bd2;">]</span>
-   <span style="color: #268bd2;">(</span>update-in db <span style="color: #6c71c4;">[</span><span style="color: #268bd2; font-weight: bold;">:todos</span> todo-id <span style="color: #268bd2; font-weight: bold;">:status</span><span style="color: #6c71c4;">]</span> <span style="color: #6c71c4;">{</span><span style="color: #268bd2; font-weight: bold;">:todo</span> <span style="color: #268bd2; font-weight: bold;">:in-progress</span>
-                                           <span style="color: #268bd2; font-weight: bold;">:in-progress</span> <span style="color: #268bd2; font-weight: bold;">:done</span><span style="color: #6c71c4;">}</span><span style="color: #268bd2;">)</span><span style="color: #b58900;">)</span><span style="color: #2aa198;">)</span>
-</pre>
-</div>
-</section>
-</section>
-<section>
-<section id="slide-org1650ef4">
-<h2 id="org1650ef4">re-frame 2 (more event handling)</h2>
-<div class="org-src-container">
-
-<pre  class="src src-clojurescript"><span style="color: #2aa198;">(</span>reg-event-fx
- <span style="color: #268bd2; font-weight: bold;">:fetch-a-random-joke</span>
- <span style="color: #b58900;">(</span><span style="color: #859900; font-weight: bold;">fn</span> <span style="color: #268bd2;">[</span><span style="color: #6c71c4;">{</span><span style="color: #268bd2; font-weight: bold;">:keys</span> <span style="color: #859900;">[</span>db<span style="color: #859900;">]</span><span style="color: #6c71c4;">}</span> _<span style="color: #268bd2;">]</span>
-   <span style="color: #268bd2;">{</span><span style="color: #268bd2; font-weight: bold;">:db</span> <span style="color: #6c71c4;">(</span>assoc db <span style="color: #268bd2; font-weight: bold;">:fetching?</span> <span style="color: #268bd2; font-weight: bold;">true</span><span style="color: #6c71c4;">)</span>
-    <span style="color: #268bd2; font-weight: bold;">:call-service</span> <span style="color: #6c71c4;">{</span><span style="color: #268bd2; font-weight: bold;">:method</span>          <span style="color: #268bd2; font-weight: bold;">:get</span>
-                   <span style="color: #268bd2; font-weight: bold;">:uri</span>             <span style="color: #2aa198;">"https://api.chucknorris.io/jokes/random"</span>
-                   <span style="color: #268bd2; font-weight: bold;">:on-success</span>      <span style="color: #859900;">[</span><span style="color: #268bd2; font-weight: bold;">:got-a-joke</span><span style="color: #859900;">]</span>
-                   <span style="color: #268bd2; font-weight: bold;">:on-failure</span>      <span style="color: #859900;">[</span><span style="color: #268bd2; font-weight: bold;">:error</span> <span style="color: #2aa198;">"Couldn't retrieve a joke"</span><span style="color: #859900;">]</span><span style="color: #6c71c4;">}</span><span style="color: #268bd2;">}</span><span style="color: #b58900;">)</span><span style="color: #2aa198;">)</span>
+<span style="color: #cccccc;">(</span>dispatch <span style="color: #66cccc;">[</span><span style="color: #6699cc;">:some-event</span> <span style="color: #66cccc;">"some data"</span> <span style="color: #66cccc;">"some more data"</span><span style="color: #66cccc;">]</span><span style="color: #cccccc;">)</span>
 </pre>
 </div>
 
 </section>
 </section>
 <section>
-<section id="slide-org94290c5">
-<h2 id="org94290c5">re-frame 3 (effects handling)</h2>
+<section id="slide-org4097fa9">
+<h2 id="org4097fa9">re-frame 2 (event handling)</h2>
 <div class="org-src-container">
 
-<pre  class="src src-clojurescript"><span style="color: #2aa198;">(</span>reg-fx
- <span style="color: #268bd2; font-weight: bold;">:http</span>
- <span style="color: #b58900;">(</span><span style="color: #859900; font-weight: bold;">fn</span> <span style="color: #268bd2;">[</span><span style="color: #6c71c4;">{</span><span style="color: #268bd2; font-weight: bold;">:keys</span> <span style="color: #859900;">[</span>method uri on-success on-failure<span style="color: #859900;">]</span><span style="color: #6c71c4;">}</span><span style="color: #268bd2;">]</span>
-   <span style="color: #268bd2;">(</span><span style="color: #b58900;">ajax</span><span style="color: #657b83; background-color: #fdf6e3;">/</span>....
-    <span style="color: #268bd2; font-weight: bold;">:success</span> <span style="color: #6c71c4;">(</span><span style="color: #859900; font-weight: bold;">fn</span> <span style="color: #859900;">[</span>data<span style="color: #859900;">]</span>
-               <span style="color: #859900;">(</span>dispatch on-success<span style="color: #859900;">)</span><span style="color: #6c71c4;">)</span>
+<pre  class="src src-clojurescript"><span style="color: #cccccc;">(</span>reg-event-db
+ <span style="color: #6699cc;">:advance-todo</span>
+ <span style="color: #66cccc;">(</span><span style="color: #99cc99;">fn</span>  <span style="color: #ffcc66;">[</span>db <span style="color: #99cc99;">[</span>_ todo-id<span style="color: #99cc99;">]</span><span style="color: #ffcc66;">]</span>
+   <span style="color: #ffcc66;">(</span>update-in db <span style="color: #99cc99;">[</span><span style="color: #6699cc;">:todos</span> todo-id <span style="color: #6699cc;">:status</span><span style="color: #99cc99;">]</span> <span style="color: #99cc99;">{</span><span style="color: #6699cc;">:todo</span> <span style="color: #6699cc;">:in-progress</span>
+                                           <span style="color: #6699cc;">:in-progress</span> <span style="color: #6699cc;">:done</span><span style="color: #99cc99;">}</span><span style="color: #ffcc66;">)</span><span style="color: #66cccc;">)</span><span style="color: #cccccc;">)</span>
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org123e69b">
+<h2 id="org123e69b">re-frame 2 (more event handling)</h2>
+<div class="org-src-container">
 
-    <span style="color: #268bd2; font-weight: bold;">:error</span> <span style="color: #6c71c4;">(</span><span style="color: #859900; font-weight: bold;">fn</span> <span style="color: #859900;">[</span>err<span style="color: #859900;">]</span>
-             <span style="color: #859900;">(</span>dispatch on-failure<span style="color: #859900;">)</span><span style="color: #6c71c4;">)</span><span style="color: #268bd2;">)</span><span style="color: #b58900;">)</span><span style="color: #2aa198;">)</span>
+<pre  class="src src-clojurescript"><span style="color: #cccccc;">(</span>reg-event-fx
+ <span style="color: #6699cc;">:fetch-a-random-joke</span>
+ <span style="color: #66cccc;">(</span><span style="color: #99cc99;">fn</span> <span style="color: #ffcc66;">[</span><span style="color: #99cc99;">{</span><span style="color: #6699cc;">:keys</span> <span style="color: #6699cc;">[</span>db<span style="color: #6699cc;">]</span><span style="color: #99cc99;">}</span> _<span style="color: #ffcc66;">]</span>
+   <span style="color: #ffcc66;">{</span><span style="color: #6699cc;">:db</span> <span style="color: #99cc99;">(</span>assoc db <span style="color: #6699cc;">:fetching?</span> <span style="color: #6699cc;">true</span><span style="color: #99cc99;">)</span>
+    <span style="color: #6699cc;">:call-service</span> <span style="color: #99cc99;">{</span><span style="color: #6699cc;">:method</span>          <span style="color: #6699cc;">:get</span>
+                   <span style="color: #6699cc;">:uri</span>             <span style="color: #66cccc;">"https://api.chucknorris.io/jokes/random"</span>
+                   <span style="color: #6699cc;">:on-success</span>      <span style="color: #6699cc;">[</span><span style="color: #6699cc;">:got-a-joke</span><span style="color: #6699cc;">]</span>
+                   <span style="color: #6699cc;">:on-failure</span>      <span style="color: #6699cc;">[</span><span style="color: #6699cc;">:error</span> <span style="color: #66cccc;">"Couldn't retrieve a joke"</span><span style="color: #6699cc;">]</span><span style="color: #99cc99;">}</span><span style="color: #ffcc66;">}</span><span style="color: #66cccc;">)</span><span style="color: #cccccc;">)</span>
 </pre>
 </div>
 
 </section>
 </section>
 <section>
-<section id="slide-org129ef86">
-<h2 id="org129ef86">re-frame 4 (query/subscriptions)</h2>
+<section id="slide-org85f4d9d">
+<h2 id="org85f4d9d">re-frame 3 (effects handling)</h2>
 <div class="org-src-container">
 
-<pre  class="src src-clojurescript"><span style="color: #2aa198;">(</span>reg-sub
- <span style="color: #268bd2; font-weight: bold;">:open-todos</span>
- <span style="color: #b58900;">(</span><span style="color: #859900; font-weight: bold;">fn</span> <span style="color: #268bd2;">[</span>db _<span style="color: #268bd2;">]</span>
-   <span style="color: #268bd2;">(</span>filter <span style="color: #6c71c4;">(</span><span style="color: #859900; font-weight: bold;">fn</span> <span style="color: #859900;">[</span>todo<span style="color: #859900;">]</span>
-             <span style="color: #859900;">(</span>not= <span style="color: #b58900;">(</span><span style="color: #268bd2; font-weight: bold;">:status</span> todo<span style="color: #b58900;">)</span> <span style="color: #268bd2; font-weight: bold;">:done</span><span style="color: #859900;">)</span><span style="color: #6c71c4;">)</span>
-    <span style="color: #6c71c4;">(</span><span style="color: #268bd2; font-weight: bold;">:todos</span> db<span style="color: #6c71c4;">)</span><span style="color: #268bd2;">)</span><span style="color: #b58900;">)</span><span style="color: #2aa198;">)</span>
+<pre  class="src src-clojurescript"><span style="color: #cccccc;">(</span>reg-fx
+ <span style="color: #6699cc;">:http</span>
+ <span style="color: #66cccc;">(</span><span style="color: #99cc99;">fn</span> <span style="color: #ffcc66;">[</span><span style="color: #99cc99;">{</span><span style="color: #6699cc;">:keys</span> <span style="color: #6699cc;">[</span>method uri on-success on-failure<span style="color: #6699cc;">]</span><span style="color: #99cc99;">}</span><span style="color: #ffcc66;">]</span>
+   <span style="color: #ffcc66;">(</span><span style="color: #6699cc;">ajax</span><span style="color: #cccccc; background-color: #2d2d2d;">/</span>....
+    <span style="color: #6699cc;">:success</span> <span style="color: #99cc99;">(</span><span style="color: #99cc99;">fn</span> <span style="color: #6699cc;">[</span>data<span style="color: #6699cc;">]</span>
+               <span style="color: #6699cc;">(</span>dispatch on-success<span style="color: #6699cc;">)</span><span style="color: #99cc99;">)</span>
+
+    <span style="color: #6699cc;">:error</span> <span style="color: #99cc99;">(</span><span style="color: #99cc99;">fn</span> <span style="color: #6699cc;">[</span>err<span style="color: #6699cc;">]</span>
+             <span style="color: #6699cc;">(</span>dispatch on-failure<span style="color: #6699cc;">)</span><span style="color: #99cc99;">)</span><span style="color: #ffcc66;">)</span><span style="color: #66cccc;">)</span><span style="color: #cccccc;">)</span>
 </pre>
 </div>
 
 </section>
 </section>
 <section>
-<section id="slide-org496ab6a">
-<h2 id="org496ab6a">re-frame 5 (View)</h2>
+<section id="slide-orge7afafc">
+<h2 id="orge7afafc">re-frame 4 (query/subscriptions)</h2>
 <div class="org-src-container">
 
-<pre  class="src src-clojurescript"><span style="color: #2aa198;">(</span><span style="color: #859900; font-weight: bold;">defn</span> <span style="color: #268bd2;">todo-list</span> <span style="color: #b58900;">[</span>title todos<span style="color: #b58900;">]</span>
-  <span style="color: #b58900;">[</span><span style="color: #268bd2; font-weight: bold;">:div</span>
-   <span style="color: #268bd2;">[</span><span style="color: #268bd2; font-weight: bold;">:div</span> title<span style="color: #268bd2;">]</span>
-   <span style="color: #268bd2;">[</span><span style="color: #268bd2; font-weight: bold;">:ul</span>
-    <span style="color: #6c71c4;">(</span><span style="color: #859900; font-weight: bold;">for</span> <span style="color: #859900;">[</span>t todos<span style="color: #859900;">]</span>
-      <span style="color: #859900;">[</span><span style="color: #268bd2; font-weight: bold;">:li</span> <span style="color: #b58900;">(</span><span style="color: #268bd2; font-weight: bold;">:description</span> t<span style="color: #b58900;">)</span><span style="color: #859900;">]</span><span style="color: #6c71c4;">)</span><span style="color: #268bd2;">]</span><span style="color: #b58900;">]</span><span style="color: #2aa198;">)</span>
+<pre  class="src src-clojurescript"><span style="color: #cccccc;">(</span>reg-sub
+ <span style="color: #6699cc;">:open-todos</span>
+ <span style="color: #66cccc;">(</span><span style="color: #99cc99;">fn</span> <span style="color: #ffcc66;">[</span>db _<span style="color: #ffcc66;">]</span>
+   <span style="color: #ffcc66;">(</span>filter <span style="color: #99cc99;">(</span><span style="color: #99cc99;">fn</span> <span style="color: #6699cc;">[</span>todo<span style="color: #6699cc;">]</span>
+             <span style="color: #6699cc;">(</span>not= <span style="color: #cccccc;">(</span><span style="color: #6699cc;">:status</span> todo<span style="color: #cccccc;">)</span> <span style="color: #6699cc;">:done</span><span style="color: #6699cc;">)</span><span style="color: #99cc99;">)</span>
+    <span style="color: #99cc99;">(</span><span style="color: #6699cc;">:todos</span> db<span style="color: #99cc99;">)</span><span style="color: #ffcc66;">)</span><span style="color: #66cccc;">)</span><span style="color: #cccccc;">)</span>
+</pre>
+</div>
 
-<span style="color: #2aa198;">(</span><span style="color: #859900; font-weight: bold;">defn</span> <span style="color: #268bd2;">main-component</span> <span style="color: #b58900;">[]</span>
-  <span style="color: #b58900;">(</span><span style="color: #859900; font-weight: bold;">let</span> <span style="color: #268bd2;">[</span>open-todos <span style="color: #6c71c4;">(</span>subscribe <span style="color: #859900;">[</span><span style="color: #268bd2; font-weight: bold;">:open-todos</span><span style="color: #859900;">]</span><span style="color: #6c71c4;">)</span>
-        done-todos <span style="color: #6c71c4;">(</span>subscribe <span style="color: #859900;">[</span><span style="color: #268bd2; font-weight: bold;">:done-todos</span><span style="color: #859900;">]</span><span style="color: #6c71c4;">)</span><span style="color: #268bd2;">]</span>
-    <span style="color: #268bd2;">(</span><span style="color: #859900; font-weight: bold;">fn</span> <span style="color: #6c71c4;">[]</span>
-     <span style="color: #6c71c4;">[</span><span style="color: #268bd2; font-weight: bold;">:div</span>
-      <span style="color: #859900;">[</span><span style="color: #268bd2; font-weight: bold;">:div</span> <span style="color: #2aa198;">"Todo app"</span><span style="color: #859900;">]</span>
-      <span style="color: #859900;">[</span>todo-list <span style="color: #2aa198;">"Open todos"</span> @open-todos<span style="color: #859900;">]</span>
-      <span style="color: #859900;">[</span>todo-list <span style="color: #2aa198;">"Done todos"</span> @done-todos<span style="color: #859900;">]</span><span style="color: #6c71c4;">]</span><span style="color: #268bd2;">)</span><span style="color: #b58900;">)</span><span style="color: #2aa198;">)</span>
+</section>
+</section>
+<section>
+<section id="slide-orgdf945e8">
+<h2 id="orgdf945e8">re-frame 5 (View)</h2>
+<div class="org-src-container">
+
+<pre  class="src src-clojurescript"><span style="color: #cccccc;">(</span><span style="color: #99cc99;">defn</span> <span style="color: #f99157;">todo-list</span> <span style="color: #66cccc;">[</span>title todos<span style="color: #66cccc;">]</span>
+  <span style="color: #66cccc;">[</span><span style="color: #6699cc;">:div</span>
+   <span style="color: #ffcc66;">[</span><span style="color: #6699cc;">:div</span> title<span style="color: #ffcc66;">]</span>
+   <span style="color: #ffcc66;">[</span><span style="color: #6699cc;">:ul</span>
+    <span style="color: #99cc99;">(</span><span style="color: #99cc99;">for</span> <span style="color: #6699cc;">[</span>t todos<span style="color: #6699cc;">]</span>
+      <span style="color: #6699cc;">[</span><span style="color: #6699cc;">:li</span> <span style="color: #cccccc;">(</span><span style="color: #6699cc;">:description</span> t<span style="color: #cccccc;">)</span><span style="color: #6699cc;">]</span><span style="color: #99cc99;">)</span><span style="color: #ffcc66;">]</span><span style="color: #66cccc;">]</span><span style="color: #cccccc;">)</span>
+
+<span style="color: #cccccc;">(</span><span style="color: #99cc99;">defn</span> <span style="color: #f99157;">main-component</span> <span style="color: #66cccc;">[]</span>
+  <span style="color: #66cccc;">(</span><span style="color: #99cc99;">let</span> <span style="color: #ffcc66;">[</span>open-todos <span style="color: #99cc99;">(</span>subscribe <span style="color: #6699cc;">[</span><span style="color: #6699cc;">:open-todos</span><span style="color: #6699cc;">]</span><span style="color: #99cc99;">)</span>
+        done-todos <span style="color: #99cc99;">(</span>subscribe <span style="color: #6699cc;">[</span><span style="color: #6699cc;">:done-todos</span><span style="color: #6699cc;">]</span><span style="color: #99cc99;">)</span><span style="color: #ffcc66;">]</span>
+    <span style="color: #ffcc66;">(</span><span style="color: #99cc99;">fn</span> <span style="color: #99cc99;">[]</span>
+     <span style="color: #99cc99;">[</span><span style="color: #6699cc;">:div</span>
+      <span style="color: #6699cc;">[</span><span style="color: #6699cc;">:div</span> <span style="color: #66cccc;">"Todo app"</span><span style="color: #6699cc;">]</span>
+      <span style="color: #6699cc;">[</span>todo-list <span style="color: #66cccc;">"Open todos"</span> @open-todos<span style="color: #6699cc;">]</span>
+      <span style="color: #6699cc;">[</span>todo-list <span style="color: #66cccc;">"Done todos"</span> @done-todos<span style="color: #6699cc;">]</span><span style="color: #99cc99;">]</span><span style="color: #ffcc66;">)</span><span style="color: #66cccc;">)</span><span style="color: #cccccc;">)</span>
 </pre>
 </div>
 </section>
 </section>
 <section>
-<section id="slide-orga24bfff">
-<h2 id="orga24bfff">Jira clone Demo!</h2>
-<ul>
-<li>Changing everything without losing state</li>
-<li>Time travel (state undo)</li>
-<li>Work independently in deffernt layers</li>
-<li>Generate dbs</li>
-
-</ul>
+<section id="slide-org6eb6bbe">
+<h2 id="org6eb6bbe">Jira clone Demo!</h2>
 </section>
 </section>
 </div>

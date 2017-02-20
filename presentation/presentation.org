@@ -10,7 +10,20 @@
 #+REVEAL_PREAMBLE:
 #+REVEAL_TRANS: none
 #+REVEAL_HLEVEL: 3
+
 #+REVEAL_THEME: simple
+ # REVEAL_THEME: beige
+ # REVEAL_THEME: black
+ # REVEAL_THEME: blood
+ # REVEAL_THEME: league
+ # REVEAL_THEME: moon
+ # REVEAL_THEME: night
+ # REVEAL_THEME: serif
+ # REVEAL_THEME: simple
+ # REVEAL_THEME: sky
+ # REVEAL_THEME: solarized
+ # REVEAL_THEME: white
+
 * Me 
   - Developer at Infuy (http://www.infuy.com)
   - Clojure +5 years
@@ -28,11 +41,12 @@
    - Reload code without losing state
    - State time travel
 
-* FP and the DOM?
-ReactJS! V=f(S)
+* FP and the DOM (ReactJS!)
+
+*V=f(S)*
 
 * SPAs are more than views
-** Diagram (a more complete architecture)
+** A more complete architecture
   [[file:architecture.png]]
 ** Properties
    - Centralized state (code hotswap, time travel, one source of truth, serializable)
@@ -145,8 +159,3 @@ ReactJS! V=f(S)
 
 #+END_SRC
 * Jira clone Demo!
-
-  - Changing everything without losing state
-  - Time travel (state undo)
-  - Work independently in deffernt layers
-  - Generate dbs
