@@ -3,18 +3,19 @@
             [jira-clone.db :as db]
             [day8.re-frame.undo :as undo :refer [undoable]] 
             [ajax.core :as ajax]
-            [cljs.spec :as s]))
+            [cljs.spec.alpha :as s]
+            [inspectable.cljs-repl :refer-macros [why]]))
 
 
 (defn check-and-throw
   "throw an exception if db doesn't match the spec"
   [a-spec db]
   (when-not (s/valid? a-spec db)
-    (throw (ex-info (str "spec check failed: " (s/explain-str a-spec db)) {}))))
+    (why (s/explain-data a-spec db))))
 
 (def check-spec (after (partial check-and-throw :jira-clone.db/db)))
 
-(def forward-issue {:todo :in-progress
+(def forward-issue {:todo :in-progres
                     :in-progress :done})
 
 (re-frame/reg-event-db

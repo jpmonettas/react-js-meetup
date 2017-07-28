@@ -1,5 +1,5 @@
 (ns jira-clone.db
-   (:require [clojure.spec :as s]
+   (:require [clojure.spec.alpha :as s]
              [clojure.test.check.generators :as gen]
              [re-frame.core :refer [subscribe dispatch]]))
 
